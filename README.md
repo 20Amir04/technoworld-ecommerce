@@ -22,10 +22,9 @@ It has being developed as a full-stack project to practice frontend (React + Tai
 - Cart, wishlist and checkout flow
 
 ## 📸 Screenshots
-
-<img width="1920" height="1030" alt="Screenshot (1078)" src="https://github.com/user-attachments/assets/530dacab-ac6f-4b64-a616-613aeada1acd" />
-<img width="448" height="710" alt="Screenshot (1081)" src="https://github.com/user-attachments/assets/442f1117-b2b5-4d62-8899-d79c07ce4c60" />
-<img width="448" height="709" alt="Screenshot (1080)" src="https://github.com/user-attachments/assets/19ab37f3-9893-4fd1-a93e-03cfceeab576" />
+<img width="1920" height="1030" alt="Screenshot (1078)" src="https://github.com/user-attachments/assets/f1fd29ea-3eb4-4f93-a0aa-bdb034a8b459" />
+<img width="448" height="710" alt="Screenshot (1081)" src="https://github.com/user-attachments/assets/1b1d8c5d-a812-4592-94ad-47bc244878af" />
+<img width="448" height="709" alt="Screenshot (1080)" src="https://github.com/user-attachments/assets/f1dc297a-1621-4283-969e-efa2a9c063e4" />
 
 
 ## ⚙️ Installation
