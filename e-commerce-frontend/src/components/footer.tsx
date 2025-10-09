@@ -8,7 +8,7 @@ import Youtube from '../assets/youtube.svg'
 function Footer()
 {
     return (
-        <footer className="fixed bottom-0 w-full bg-black text-white font-serif">
+        <footer className="relative w-full bg-black text-white font-serif">
             <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-5">
                 <div className="">
                     <h2 className="font-bold mb-4 text-center">
