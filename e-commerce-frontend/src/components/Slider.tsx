@@ -71,7 +71,7 @@ function LaptopSlider()
                 </Swiper>
             </div>
             <div className="text-white font-medium flex justify-center mt-5 mb-10">
-                <a href="/Category/Laptops" className=" bg-black hover:scale-110 transition-transform duration-300 px-7 py-3 rounded-full">
+                <a href="/Category/laptops" className=" bg-black hover:scale-110 transition-transform duration-300 px-7 py-3 rounded-full">
                     Check Now!
                 </a>
             </div>

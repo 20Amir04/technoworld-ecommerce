@@ -1,17 +1,16 @@
 import {useParams} from 'react-router-dom';
+import { subcategories } from '../data/subcategories';
+import SubCategoryList from '../components/SubCategoryList';
 
 function Category()
 {
     const {name} = useParams<{ name: string}>();
-    return (
-      <div>
-        <h1>Category: {name}</h1>
+    
+    if (!name) return null;
 
-        {name == "computers" && <p>Here are computers for sale!</p>}
-        {name == "laptops" && <p>Here are laptops for sale!</p>}
-        {name == "phones" && <p>Here are phones for sale!</p>}
-      </div>
-    );
+    const items = subcategories[name as keyof typeof subcategories] || [];
+
+    return <SubCategoryList category={name} items={items} />;
 }
 
 export default Category
