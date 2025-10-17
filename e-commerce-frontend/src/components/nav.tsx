@@ -37,9 +37,9 @@ function Navbar ()
           </div>  
           {isOpen && (
           <div className="absolute top-20 left-0 w-full bg-black flex flex-col items-center gap-6 py-6 md:hidden">
-            <Link to="/category/computers" onClick={() => setIsOpen(false)}>COMPUTERS</Link>
-            <Link to="/category/laptops" onClick={() => setIsOpen(false)}>LAPTOPS</Link>
-            <Link to="/category/phones" onClick={() => setIsOpen(false)}>PHONES</Link>
+            <Link to="/category/computers" className="hover:scale-110 transition-transform duration-200" onClick={() => setIsOpen(false)}>COMPUTERS</Link>
+            <Link to="/category/laptops" className="hover:scale-110 transition-transform duration-200" onClick={() => setIsOpen(false)}>LAPTOPS</Link>
+            <Link to="/category/phones" className="hover:scale-110 transition-transform duration-200" onClick={() => setIsOpen(false)}>PHONES</Link>
         </div>
           )}  
         </nav>        

@@ -1,25 +1,44 @@
+import Dlaptop1 from "../assets/desktopLaptop/laptop1.png"
+import Dlaptop2 from "../assets/desktopLaptop/laptop2.png"
+import Dlaptop3 from "../assets/desktopLaptop/laptop3.png"
+import Dlaptop4 from "../assets/desktopLaptop/laptop4.png"
+import Dlaptop5 from "../assets/desktopLaptop/laptop5.png"
+
+import Glaptop1 from "../assets/gamingLaptop/glaptop1.png"
+import Glaptop2 from "../assets/gamingLaptop/glaptop2.png"
+import Glaptop3 from "../assets/gamingLaptop/glaptop3.png"
+import Glaptop4 from "../assets/gamingLaptop/glaptop4.png"
+import Glaptop5 from "../assets/gamingLaptop/glaptop5.png"
+
+import Macbook1 from "../assets/macbook/macbook1.png"
+import Macbook2 from "../assets/macbook/macbook2.png"
+import Macbook3 from "../assets/macbook/macbook3.png"
+import Macbook4 from "../assets/macbook/macbook4.png"
+import Macbook5 from "../assets/macbook/macbook5.png"
+
+
 export const laptops = {
     desktop: [
-        {id:1, name: "HP OmniDesk Desktop PC", price: 899.99, image: "../assets/desktopPC/HPomniDesk.jpg"},
-        {id:2, name: "Lenovo IdeaCentre 3i Desktop PC ", price: 799.99, image: "../assets/desktopPC/LenovoIdeaCentre.jpg"},
-        {id:3, name: "DELL OptiPlex 7060 SFF", price: 520, image: "../assets/desktopPC/Dell.jpg"},
-        {id:4, name: "ASUS Desktop PC", price: 699.99, image: "../assets/desktopPC/AsusDesktop.jpg"},
-        {id:5, name: "Acer Desktop PC - Black", price: 599.99, image: "../assets/desktopPC/AcerDesktop.jpg"}
+        {id:1, name: "HP 15.6' Laptop - Jet Black", price: 799.99, image: Dlaptop1},
+        {id:2, name: "Lenovo IdeaPad Slim 3x 15.3' Copilot+ PC Laptop", price: 999.99, image: Dlaptop2},
+        {id:3, name: "Acer Aspire Lite 15.6' Laptop - Silver", price: 549.99, image: Dlaptop3},
+        {id:4, name: "Lenovo Yoga Slim 7x 14.5' Touchscreen Copilot+ PC Laptop - Cosmic Blue", price: 1699.99, image: Dlaptop4},
+        {id:5, name: "ASUS Vivobook S16 16' AI Laptop - Matte Grey", price: 799.99, image: Dlaptop5}
     ],
 
     gaming: [
-        {id:1, name: "Acer Nitro N60-640-EB23 Gaming PC", price: 1599.99, image: "../assets/gamingPC/AcerGaming.jpg"},
-        {id:2, name: "MSI MSI Codx R2 AI Gaming PC", price: 1699.99, image: "../assets/gamingPC/MSI.jpg"},
-        {id:3, name: "TECHNOID LimitedA1 Gaming PC", price: 2799.99, image: "../assets/gamingPC/Technoid.jpg"},
-        {id:4, name: "ASUS ROG Strix G13 Gaming PC - Dark Grey", price: 1199.99,image: "../assets/gamingPC/AsusRog.jpg"},
-        {id:5, name: "SK Gaming RGB Desktop Tower PC", price: 949.99,image: "../assets/gamingPC/SKgaming.jpeg"}
+        {id:1, name: "ASUS TUF F15 15.6' 144Hz Gaming Laptop", price: 1799.99, image: Glaptop1},
+        {id:2, name: "ASUS ROG Strix G16 16' 165Hz Gaming Laptop", price: 1999.99, image: Glaptop2},
+        {id:3, name: "Lenovo Legion 5i 15.1' Gaming Laptop - Eclipse Black", price: 1999.99, image: Glaptop3},
+        {id:4, name: "Acer Nitro V 15.6' Gaming Laptop", price: 999.99,image: Glaptop4},
+        {id:5, name: "Lenovo Legion 7i 16' Gaming Laptop - White", price: 2799.99,image: Glaptop5}
     ],
 
     macbook: [
-        {id:1, name: "Desktop PC", price: 2000,image: "../assets/Imac/"},
-        {id:2, name: "Desktop PC", price: 2000,image: "../assets/Imac/"},
-        {id:3, name: "Desktop PC", price: 2000,image: "../assets/Imac/"},
-        {id:4, name: "Desktop PC", price: 2000,image: "../assets/Imac/"},
-        {id:5, name: "Desktop PC", price: 2000,image: "../assets/Imac/"}
+        {id:1, name: "Apple MacBook Air 13.6' w/ Touch ID (2025)", price: 1399.99,image: Macbook1},
+        {id:2, name: "Apple MacBook Pro 16-inch", price: 1899.99, image: Macbook2},
+        {id:3, name: "Apple MacBook Air 13.3' w/ Touch ID (Fall 2020)", price: 933.99, image: Macbook3},
+        {id:4, name: "Apple MacBook Pro (2020) w/ Touch Bar 13.3'", price: 769.99, image: Macbook4},
+        {id:5, name: "Desktop Apple MacBook Air 13.6' w/ Touch ID (2022) - MidnightPC", price: 859.99, image: Macbook5}
     ]
 }

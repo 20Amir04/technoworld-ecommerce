@@ -2,6 +2,7 @@ import {useParams} from 'react-router-dom';
 import { subcategories } from '../data/subcategories';
 import SubCategoryList from '../components/SubCategoryList';
 
+
 function Category()
 {
     const {name} = useParams<{ name: string}>();

@@ -4,15 +4,15 @@ import Imac from "../assets/IMac.png";
 import Laptop1 from "../assets/45999.png";
 import GamingLaptop from "../assets/gaminglt.png";
 import Macbook from "../assets/macbook.png";
-import Android from "../assets/android.png";
-import Iphone from "../assets/iphone.png";
+import Android from "../assets/android/android2.png";
+import Iphone from "../assets/iphone/iphone1.png";
 
 export const subcategories = {
 
     computers: [
         {id:1, name: "Desktop Computer", slug: "desktop", image: DesktopPC},
         {id:2, name: "Gaming Computer", slug: "gaming", image: GamingPC},
-        {id:3, name: "IMac", slug: "mac", image: Imac} 
+        {id:3, name: "IMac", slug: "Imac", image: Imac} 
     ],
 
     laptops: [
@@ -22,7 +22,7 @@ export const subcategories = {
     ],
 
     phones: [
-        {id:1, name: "Android", slug: "Android", image: Android},
+        {id:1, name: "Android", slug: "android", image: Android},
         {id:2, name: "Iphone", slug: "iphone", image: Iphone}   
     ]
 

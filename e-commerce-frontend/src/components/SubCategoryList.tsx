@@ -27,10 +27,13 @@ const SubCategoryList: React.FC<SubCategoryListProps> = ({category, items}) => {
                         <img
                         src={item.image}
                         alt={item.name}
-                        className="relative z-10 w-120 h-100 group-hover:scale-105 transition-transform duration-300"
+                        className="relative z-10 w-auto h-auto group-hover:scale-105 transition-transform duration-300"
                         />
                         <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-50 transition"/>
-                        <h3 className="absolute bottom-6 left-6 text-white text-2xl font-serif z-20">{item.name}</h3>
+                        <div className="mt-10">
+                            <h3 className="absolute bottom-6 left-6 text-white text-2xl font-serif z-20">{item.name}</h3>
+                        </div>
+                        
                     </Link>
                 ))}
             </div>    
