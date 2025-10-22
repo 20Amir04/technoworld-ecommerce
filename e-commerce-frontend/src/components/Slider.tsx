@@ -13,7 +13,7 @@ function LaptopSlider()
 {
     return (
         <section className="mt-10 font-serif">
-            <h1 className="mb-10 flex justify-center font-bold text-[clamp(1.2rem,4vw,3rem)]">
+            <h1 className="mb-10 flex justify-center text-[clamp(1.2rem,4vw,3rem)]">
                 Check Our Laptops
             </h1>
             <div className="">

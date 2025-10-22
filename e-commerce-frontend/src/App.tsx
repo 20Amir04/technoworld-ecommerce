@@ -5,6 +5,7 @@ import Category from './pages/Category'
 import Home from './pages/Home'
 import Footer from './components/footer'
 import SubCategory from './pages/SubCategory'
+import Cart from "./pages/Cart"
 
 
 function App() {
@@ -16,7 +17,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/category/:name" element={<Category />} />
         <Route path="/category/:name/:sub" element={<SubCategory />} />
-    </Routes>
+        <Route path="/cart" element={<Cart />} />
+      </Routes>
     </main>
     <Footer/>
     </BrowserRouter>
