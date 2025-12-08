@@ -6,6 +6,8 @@ import Home from './pages/Home'
 import Footer from './components/footer'
 import SubCategory from './pages/SubCategory'
 import Cart from "./pages/Cart"
+import Wishlist from './pages/Wishlist'
+import AuthPage from './pages/AuthPage'
 
 
 function App() {
@@ -18,6 +20,8 @@ function App() {
         <Route path="/category/:name" element={<Category />} />
         <Route path="/category/:name/:sub" element={<SubCategory />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/wishlist" element={<Wishlist />} />
+        <Route path="/auth" element={<AuthPage />} />
       </Routes>
     </main>
     <Footer/>
