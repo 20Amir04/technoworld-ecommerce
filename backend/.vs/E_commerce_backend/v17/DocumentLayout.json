@@ -1,0 +1,113 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Amir\\Desktop\\Projects\\E-commerce\\E_commerce_backend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A9C82B17-59CB-471B-9FE1-68D39DE5B080}|E_commerce_backend\\E_commerce_backend.csproj|c:\\users\\amir\\desktop\\projects\\e-commerce\\e_commerce_backend\\e_commerce_backend\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9C82B17-59CB-471B-9FE1-68D39DE5B080}|E_commerce_backend\\E_commerce_backend.csproj|solutionrelative:e_commerce_backend\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9C82B17-59CB-471B-9FE1-68D39DE5B080}|E_commerce_backend\\E_commerce_backend.csproj|c:\\users\\amir\\desktop\\projects\\e-commerce\\e_commerce_backend\\e_commerce_backend\\controllers\\wishlistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9C82B17-59CB-471B-9FE1-68D39DE5B080}|E_commerce_backend\\E_commerce_backend.csproj|solutionrelative:e_commerce_backend\\controllers\\wishlistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9C82B17-59CB-471B-9FE1-68D39DE5B080}|E_commerce_backend\\E_commerce_backend.csproj|c:\\users\\amir\\desktop\\projects\\e-commerce\\e_commerce_backend\\e_commerce_backend\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9C82B17-59CB-471B-9FE1-68D39DE5B080}|E_commerce_backend\\E_commerce_backend.csproj|solutionrelative:e_commerce_backend\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9C82B17-59CB-471B-9FE1-68D39DE5B080}|E_commerce_backend\\E_commerce_backend.csproj|c:\\users\\amir\\desktop\\projects\\e-commerce\\e_commerce_backend\\e_commerce_backend\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9C82B17-59CB-471B-9FE1-68D39DE5B080}|E_commerce_backend\\E_commerce_backend.csproj|solutionrelative:e_commerce_backend\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9C82B17-59CB-471B-9FE1-68D39DE5B080}|E_commerce_backend\\E_commerce_backend.csproj|c:\\users\\amir\\desktop\\projects\\e-commerce\\e_commerce_backend\\e_commerce_backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9C82B17-59CB-471B-9FE1-68D39DE5B080}|E_commerce_backend\\E_commerce_backend.csproj|solutionrelative:e_commerce_backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\Users\\Amir\\Desktop\\Projects\\E-commerce\\E_commerce_backend\\E_commerce_backend\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "E_commerce_backend\\Controllers\\UsersController.cs",
+              "ToolTip": "C:\\Users\\Amir\\Desktop\\Projects\\E-commerce\\E_commerce_backend\\E_commerce_backend\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "E_commerce_backend\\Controllers\\UsersController.cs",
+              "ViewState": "AQIAADMAAAAAAAAAAAAIwD4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T04:34:23.091Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "WishlistController.cs",
+              "DocumentMoniker": "C:\\Users\\Amir\\Desktop\\Projects\\E-commerce\\E_commerce_backend\\E_commerce_backend\\Controllers\\WishlistController.cs",
+              "RelativeDocumentMoniker": "E_commerce_backend\\Controllers\\WishlistController.cs",
+              "ToolTip": "C:\\Users\\Amir\\Desktop\\Projects\\E-commerce\\E_commerce_backend\\E_commerce_backend\\Controllers\\WishlistController.cs",
+              "RelativeToolTip": "E_commerce_backend\\Controllers\\WishlistController.cs",
+              "ViewState": "AQIAADsAAAAAAAAAAAAswEsAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T04:33:45.169Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CartController.cs",
+              "DocumentMoniker": "C:\\Users\\Amir\\Desktop\\Projects\\E-commerce\\E_commerce_backend\\E_commerce_backend\\Controllers\\CartController.cs",
+              "RelativeDocumentMoniker": "E_commerce_backend\\Controllers\\CartController.cs",
+              "ToolTip": "C:\\Users\\Amir\\Desktop\\Projects\\E-commerce\\E_commerce_backend\\E_commerce_backend\\Controllers\\CartController.cs",
+              "RelativeToolTip": "E_commerce_backend\\Controllers\\CartController.cs",
+              "ViewState": "AQIAAEMAAAAAAAAAAAAwwBgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T04:33:05.182Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProductsController.cs",
+              "DocumentMoniker": "C:\\Users\\Amir\\Desktop\\Projects\\E-commerce\\E_commerce_backend\\E_commerce_backend\\Controllers\\ProductsController.cs",
+              "RelativeDocumentMoniker": "E_commerce_backend\\Controllers\\ProductsController.cs",
+              "ToolTip": "C:\\Users\\Amir\\Desktop\\Projects\\E-commerce\\E_commerce_backend\\E_commerce_backend\\Controllers\\ProductsController.cs",
+              "RelativeToolTip": "E_commerce_backend\\Controllers\\ProductsController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T04:32:24.64Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Amir\\Desktop\\Projects\\E-commerce\\E_commerce_backend\\E_commerce_backend\\Program.cs",
+              "RelativeDocumentMoniker": "E_commerce_backend\\Program.cs",
+              "ToolTip": "C:\\Users\\Amir\\Desktop\\Projects\\E-commerce\\E_commerce_backend\\E_commerce_backend\\Program.cs",
+              "RelativeToolTip": "E_commerce_backend\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T04:17:31.258Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
