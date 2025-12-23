@@ -1,7 +1,6 @@
 import {Link} from "react-router-dom";
 
-interface SubCategory {  /* interface — это конструкция из TypeScript, которая описывает структуру объекта: какие поля у него есть, какого они типа.
-Она нужна, чтобы IDE и компилятор понимали, какие данные ты передаёшь в компонент.*/
+interface SubCategory {  
     id: number;
     name: string;
     slug: string;

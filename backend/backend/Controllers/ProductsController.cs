@@ -32,13 +32,15 @@ namespace E_commerce_backend.Controllers
         }
 
         [HttpGet("by-category")]
-        public async Task<ActionResult<IEnumerable<Product>>> GetByCategory([FromQuery] string category)
+        public async Task<ActionResult<IEnumerable<Product>>> GetByCategory([FromQuery] string category, [FromQuery] string subcategory)
         {
             if (string.IsNullOrWhiteSpace(category))
                 return BadRequest("Category is required.");
+            if (string.IsNullOrWhiteSpace(subcategory))
+                return BadRequest("SubCategory is required.");
 
             var products = await _context.Products
-                .Where(p => p.Category == category)
+                .Where(p => p.Category == category && p.Subcategory == subcategory)
                 .ToListAsync();
 
             return Ok(products);

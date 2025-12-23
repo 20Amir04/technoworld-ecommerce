@@ -1,33 +1,37 @@
+import { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
-import { computers } from "../data/computers";
-import { laptops } from "../data/laptops";
-import {phones} from "../data/phones";
+import { FetchProductsByCategory} from "../api/apiClient";
+import type {Product} from "../api/apiClient";
 
 interface ProductListProps {
   category: string;
 }
 
-const ProductList: React.FC<ProductListProps> = ({ category }) => { /* React.FC (React Function Component) — это типизация функционального компонента в React.
-Она говорит TypeScript: “Эта функция — компонент React, и она принимает пропсы вот такого типа”.*/
+const ProductList: React.FC<ProductListProps> = ({ category }) => { 
   const [main, sub] = category.split("/");
 
-  console.log("Main/Sub:", main, sub);
+  const [items, setItems] = useState<Product[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
 
-  let items: any[] = [];
+  useEffect(() =>{
+    if (!main || !sub) return;
 
-  console.log("items: ", items);
+    const load = async () => {
+      try {
+        setLoading(true);
+        setError(null);
 
-  if (main === "computers" && sub) {
-    items = computers[sub as keyof typeof computers] || []; /* as keyof typeof computers — это уточнение типа,
-                                                                которое говорит TypeScript:
-                                                                "строка sub точно совпадает с одним из ключей объекта computers."*/
-  }
-  else if (main === "laptops" && sub) {
-    items = laptops[sub as keyof typeof laptops] || [];
-  }
-  else if (main === "phones" && sub) {
-    items = phones[sub as keyof typeof phones] || [];
-  }
+        const data = await FetchProductsByCategory(main, sub);
+        setItems(data);
+      }catch (e: any) {
+        setError(e.message ?? "Failed to load Products");
+      }finally {
+        setLoading(false);
+      }
+    };
+    load();
+  }, [main, sub]);
 
   return (
     <div className="px-8 py-12">
@@ -35,18 +39,21 @@ const ProductList: React.FC<ProductListProps> = ({ category }) => { /* React.FC 
         {main} {sub && `- ${sub}`}
       </h2>
 
-      {items.length === 0 ? (
+      {loading && <p>Loading...</p>}
+      {error && <p className="text-red-500">{error}</p>}
+
+      {!loading && !error && items.length == 0 && (
         <p>No products found.</p>
-      ) : (
+      )}
+
+      {!loading && !error && items.length > 0 && (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          {items.map((item) => (
-            <ProductCard
+          {items.map((item) => 
+           <ProductCard 
               key={item.id}
-              name={item.name}
-              price={item.price}
-              image={item.image}
+              product={item}
             />
-          ))}
+          )}
         </div>
       )}
     </div>

@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import {useState} from 'react'
-import logo from '../assets/logo1.png'
 import {UserIcon, ShoppingCartIcon, HeartIcon, Bars3Icon, XMarkIcon} from "@heroicons/react/24/outline"
 
 
@@ -23,7 +22,7 @@ function Navbar ()
           </div>
           <div className="flex justify-center md:justify-start hover:scale-105 transition-transform duration-200">
               <Link to="/" className="h-32 w-32 py-7">
-                <img src={logo} alt="Home Page" />
+                <img src={'/assets/logo1.png'} alt="Home Page" />
               </Link>
           </div>
           <div className="gap-10 text-lg font-medium font-serif hidden md:flex ">

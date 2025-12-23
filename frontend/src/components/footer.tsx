@@ -1,9 +1,4 @@
 import {Link} from 'react-router-dom'
-import Facebook from '../assets/facebook.svg'
-import Instagram from '../assets/instagram.svg'
-import Tiktok from '../assets/tiktok.svg'
-import Youtube from '../assets/youtube.svg'
-
 
 function Footer()
 {
@@ -39,22 +34,22 @@ function Footer()
                     <ul className="flex flex-col items-center gap-4">
                         <li>
                             <a href="https://www.facebook.com/Microsoft/">
-                                <img src={Facebook} className="h-6 w-6 hover:scale-110 transition-transform duration-200" alt="Microsoft`s Facebook page" />
+                                <img src={'/assets/facebook.svg'} className="h-6 w-6 hover:scale-110 transition-transform duration-200" alt="Microsoft`s Facebook page" />
                             </a>
                         </li>
                         <li>
                             <a href="https://www.instagram.com/microsoft/">
-                                <img src={Instagram} className="h-6 w-6 hover:scale-110 transition-transform duration-200" alt="Microsoft`s Instagram page" />
+                                <img src={'/assets/instagram.svg'} className="h-6 w-6 hover:scale-110 transition-transform duration-200" alt="Microsoft`s Instagram page" />
                             </a>
                         </li>
                         <li>
                             <a href="https://www.tiktok.com/@microsoft">
-                                <img src={Tiktok} className="h-6 w-6 hover:scale-110 transition-transform duration-200" alt="Microsoft`s Tiktok page" />
+                                <img src={'/assets/tiktok.svg'} className="h-6 w-6 hover:scale-110 transition-transform duration-200" alt="Microsoft`s Tiktok page" />
                             </a>
                         </li>
                         <li>
                             <a href="https://www.youtube.com/microsoft">
-                                <img src={Youtube} className="h-6 w-6 hover:scale-110 transition-transform duration-200" alt="Microsoft`s Youtube channel" />
+                                <img src={'/assets/youtube.svg'} className="h-6 w-6 hover:scale-110 transition-transform duration-200" alt="Microsoft`s Youtube channel" />
                             </a>
                         </li>
                     </ul>

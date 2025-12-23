@@ -1,7 +1,5 @@
 import CartItem from "../components/CartItem";
 import CartSummary from "../components/CartSummary";
-import AcerNitro from "../assets/gaimingPC/AcerGaming.png"
-import Dell from "../assets/desktopPC/Dell.jpeg"
 import { useState } from "react";
 
 function Cart()
@@ -12,14 +10,14 @@ function Cart()
             name: "Acer Nitro N60-640-EB23 Gaming PC",
             price: 1599.99,
             qty: 1,
-            image: AcerNitro
+            image: "/assets/gaimingPC/AcerGaming.png"
         },
          {
             id: 2,
             name: "DELL OptiPlex 7060 SFF",
             price: 520,
             qty: 1,
-            image: Dell
+            image: "/assets/desktopPC/Dell.jpeg"
         }
     ]);
 

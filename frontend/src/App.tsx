@@ -8,6 +8,7 @@ import SubCategory from './pages/SubCategory'
 import Cart from "./pages/Cart"
 import Wishlist from './pages/Wishlist'
 import AuthPage from './pages/AuthPage'
+import ProductPage from './pages/ProductPage'
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/auth" element={<AuthPage />} />
+        <Route path="/Product/:id" element={<ProductPage/>} />
       </Routes>
     </main>
     <Footer/>
