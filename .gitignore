@@ -82,3 +82,13 @@ __snapshots__/
 *.tmp
 *.temp
 *.old
+
+.vs/
+*.suo
+
+**/bin/
+**/obj/
+
+
+*.user
+*.cache
