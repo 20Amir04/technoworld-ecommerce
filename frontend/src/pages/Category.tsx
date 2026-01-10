@@ -5,13 +5,13 @@ import SubCategoryList from '../components/SubCategoryList';
 
 function Category()
 {
-    const {name} = useParams<{ name: string}>();
+    const {category} = useParams<{ category: string}>();
     
-    if (!name) return null;
+    if (!category) return null;
 
-    const items = subcategories[name as keyof typeof subcategories] || [];
+    const items = subcategories[category as keyof typeof subcategories] || [];
 
-    return <SubCategoryList category={name} items={items} />;
+    return <SubCategoryList category={category} items={items} />;
 }
 
 export default Category

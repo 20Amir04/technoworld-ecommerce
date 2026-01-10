@@ -18,8 +18,8 @@ function App() {
     <main className="flex-grow mt-20">
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/category/:name" element={<Category />} />
-        <Route path="/category/:name/:sub" element={<SubCategory />} />
+        <Route path="/category/:category" element={<Category />} />
+        <Route path="/category/:category/:subcategory" element={<SubCategory />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/auth" element={<AuthPage />} />

@@ -3,13 +3,13 @@ import ProductList from "../components/ProductList";
 
 function SubCategory()
 {
-   const {name, sub} = useParams<{name: string; sub: string} >();
+   const {category, subcategory} = useParams<{category: string; subcategory: string} >();
 
-   if (!name || !sub) return null;
+   if (!category || !subcategory) return null;
 
    return (
     <div>
-        <ProductList category={`${name}/${sub}`} />
+        <ProductList category={`${category}/${subcategory}`} />
     </div>
    );
   

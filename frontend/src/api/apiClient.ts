@@ -1,7 +1,8 @@
 
 
 
-const API_BASE_URL = import.meta.env.VITE_API_URL ?? "https://localhost:7031";
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? "https://localhost:7031";
+
 
 export interface Product {
     id: number;
@@ -27,13 +28,18 @@ function normalizeProduct(p: any): Product {
     };
 }
 
-async function fetchJson<T>(url: string): Promise<T> {
-    const response = await fetch(url);
+async function fetchJson<T>(url: string, init?: RequestInit): Promise<T> {
+    const response = await fetch(url, {
+        credentials: "include",
+        ...init,   
+    });
 
     if (!response.ok) {
-        throw new Error(`Request failed: ${response.status}`);
+        const msg = await response.text().catch(() => "");
+        throw new Error(msg || `Request failed: ${response.status}`);
     }
-    return response.json();
+    return response.json() as Promise<T>;
+
 }
 
 export async function FetchAllProducts(): Promise<Product[]> {
@@ -55,6 +61,46 @@ export async function FetchProductsByCategory(category: string, subcategory: str
 export async function FetchProductById(id: number | string): Promise<Product> {
     const url = `${API_BASE_URL}/api/Products/${id}`;
 
-    const data = await fetchJson<any[]>(url);
+    const data = await fetchJson<any>(url);
     return normalizeProduct(data);
+}
+
+export interface AuthUser
+{
+    id: number;
+    name: string;
+    email: string;
+}
+
+export async function Register(name: string, email: string, password: string): Promise<AuthUser>
+{
+    const url = `${API_BASE_URL}/api/Auth/register`;
+
+    return fetchJson<AuthUser>(url, {
+        method: "POST",
+        headers: {"Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, password}),
+    });
+}
+
+export async function Login(email: string, password: string): Promise<AuthUser> {
+    const url = `${API_BASE_URL}/api/Auth/login`;
+    
+    return fetchJson<AuthUser>(url, {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({email, password}),
+    });
+}
+
+export async function Me(): Promise<AuthUser> {
+    const url = `${API_BASE_URL}/api/Auth/me`;
+
+    return fetchJson<AuthUser>(url);
+}
+
+export async function Logout(): Promise<void> {
+    const url = `${API_BASE_URL}/api/Auth/logout`;
+
+    await fetchJson<void>(url, {method: "POST"});
 }
