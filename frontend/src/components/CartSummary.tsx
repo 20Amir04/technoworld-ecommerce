@@ -12,7 +12,7 @@ interface CartSummaryPrors {
 const CartSummary: React.FC<CartSummaryPrors> = ({items}) => {
 
     const subtotal = items.reduce((sum, item) => sum + item.price * item.qty, 0);
-    const delivery = 9.99 > 1000 ? 0:9.99;
+    const delivery = subtotal > 1000 ? 0 : 9.99;
     const tax = subtotal * 0.13;
     const total = subtotal + delivery + tax;
 

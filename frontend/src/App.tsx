@@ -9,6 +9,7 @@ import Cart from "./pages/Cart"
 import Wishlist from './pages/Wishlist'
 import AuthPage from './pages/AuthPage'
 import ProductPage from './pages/ProductPage'
+import ProtectedRoute from './auth/ProtectedRoute'
 
 
 function App() {
@@ -20,8 +21,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/category/:category" element={<Category />} />
         <Route path="/category/:category/:subcategory" element={<SubCategory />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/wishlist" element={<Wishlist />} />
+        <Route path="/cart" element={<ProtectedRoute><Cart /></ProtectedRoute>} />
+        <Route path="/wishlist" element={<ProtectedRoute><Wishlist /></ProtectedRoute>} />
         <Route path="/auth" element={<AuthPage />} />
         <Route path="/Product/:id" element={<ProductPage/>} />
       </Routes>

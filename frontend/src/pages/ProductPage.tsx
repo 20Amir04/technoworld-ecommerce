@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import { useParams, Link} from "react-router-dom";
 import { FetchProductById, type Product } from "../api/apiClient";
+import { useCart } from "../auth/CartContext";
+import { useWishlist } from "../auth/WishlistContext";
+import { useAuth } from "../auth/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 
 function formatPrice(price: number) {
@@ -8,11 +12,17 @@ function formatPrice(price: number) {
 }
 
 export default function ProductPage() {
-    const {id} = useParams();
-
     const [product, setProduct] = useState<Product | null>(null);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
+
+    const navigate = useNavigate();
+    const {user} = useAuth();
+    const {toggle, isInWishlist} = useWishlist();
+    const {add} = useCart();
+    const {id} = useParams();
+
+    const liked = product ? isInWishlist(product.id) : false;
 
     useEffect(() => {
         const load = async () => {
@@ -172,7 +182,13 @@ export default function ProductPage() {
                             <button
                             className="w-full bg-black text-white py-3 rounded-xl font-medium hover:scale-110 transition-transform duration-300"
                             type="button"
-                            onClick={() => console.log("Add to cart", product.id)}
+                            onClick={() => {
+                                if (!user) {
+                                    navigate("/account");
+                                    return;
+                                }
+                                add(product.id);
+                            }}
                             >
                                 Add to Cart
                             </button>
@@ -180,9 +196,15 @@ export default function ProductPage() {
                             <button
                             className="w-full border border-black py-3 rounded-xl font-medium font-serif hover:bg-black hover:text-white hover:scale-110 transition-transform duration-300"
                             type="button"
-                            onClick={() => console.log("Wishlist", product.id)}
+                            onClick={() => {
+                                if (!user) {
+                                    navigate("/account");
+                                    return;
+                                }
+                                toggle(product.id)
+                            }}
                             >
-                                Add to Wishlist
+                                {liked ? "Remove from Wishlist" : "Add to Wishlist"}
                             </button>
                         </div>
                         

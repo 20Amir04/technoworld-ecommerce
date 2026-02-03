@@ -33,7 +33,7 @@ function Navbar ()
           <div className="flex gap-10 text-lg font-medium">
             <Link to = "/Cart"><ShoppingCartIcon className="h-6 w-6 hover:scale-110 transition-transform duration-200"/></Link>
             <Link to ="/Wishlist" className="hidden md:block"><HeartIcon className="h-6 w-6 hover:scale-110 transition-transform duration-200"/></Link>
-            <Link to ="/AuthPage"><UserIcon className="h-6 w-6 hover:scale-110 transition-transform duration-200"/></Link>
+            <Link to ="/auth" aria-label='Account'><UserIcon className="h-6 w-6 hover:scale-110 transition-transform duration-200"/></Link>
           </div>  
           {isOpen && (
           <div className="absolute top-20 left-0 w-full bg-black flex flex-col items-center gap-6 py-6 md:hidden">
