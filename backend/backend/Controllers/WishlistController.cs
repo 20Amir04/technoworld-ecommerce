@@ -1,12 +1,15 @@
 ﻿using E_commerce_backend.Data;
 using E_commerce_backend.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 namespace E_commerce_backend.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class WishlistController : ControllerBase
     {
         private readonly AppDbContext _context;
@@ -15,67 +18,84 @@ namespace E_commerce_backend.Controllers
         {
             _context = context;
         }
-
-        public class WishlistRequest
+    
+        [HttpGet]
+        public async Task<IActionResult> GetWishlist()
         {
-            public int UserId { get; set; }
-            public int ProductId { get; set; }
+            var userId = GetUserId();
+
+            var products = await _context.Wishlists
+                .Where(w => w.UserId == userId)
+                .Include(w => w.Product)
+                .Select(w => w.Product!)
+                .ToListAsync();
+           
+
+            return Ok(products);
         }
 
-        [HttpGet]
-        public async Task<IActionResult> GetWishlist([FromQuery] int userId)
+        [HttpPost("{productId:int}")]
+        public async Task<IActionResult> AddToWishlist(int productId)
         {
-            var items = await _context.Wishlists
-                .Include(w => w.Product)
-                .Where(w => w.UserId == userId)
-                .ToListAsync();
+            var userId = GetUserId();
 
-            var result = items.Select(w => new
+            var exists = await _context.Wishlists
+                .AnyAsync(w => w.UserId == userId && w.ProductId == productId);
+
+            if (exists)
+                return Conflict("Product is already in wishlist.");
+
+            var productExists = await _context.Products.AnyAsync(p => p.Id == productId);
+            if (!productExists) return NotFound("Product not found!");
+
+            _context.Wishlists.Add(new WishlistItem
             {
-                w.Id,
-                w.UserId,
-                w.ProductId,
-                Product = w.Product == null ? null : new
-                {
-                    w.Product.Name,
-                    w.Product.Price,
-                    w.Product.ImageUrl,
-                    w.Product.Category
-                }
+                UserId = userId,
+                ProductId = productId
             });
 
-            return Ok(result);
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> AddToWishlist([FromBody] WishlistRequest request)
-        {
-            var existing = await _context.Wishlists
-                .FirstOrDefaultAsync(w => w.UserId == request.UserId && w.ProductId == request.ProductId);
-
-            if (existing != null)
-                return BadRequest("Product is already in wishlist.");
-
-            var item = new WishlistItem
-            {
-                UserId = request.UserId,
-                ProductId = request.ProductId
-            };
-
-            _context.Wishlists.Add(item);
             await _context.SaveChangesAsync();
             return Ok();
         }
 
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> RemoveFromWishlist(int id)
+        [HttpDelete("{productId:int}")]
+        public async Task<IActionResult> RemoveFromWishlist(int productId)
         {
-            var item = await _context.Wishlists.FindAsync(id);
+            var userId = GetUserId();
+
+            var item = await _context.Wishlists
+                .FirstOrDefaultAsync(w => w.UserId == userId && w.ProductId == productId);
+
             if (item == null) return NotFound();
 
             _context.Wishlists.Remove(item);
             await _context.SaveChangesAsync();
             return Ok();
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> Clear()
+        {
+            var userId = GetUserId();
+            
+            var items = await _context.Wishlists.Where(w  => w.UserId == userId).ToListAsync();
+
+            if (items.Count == 0)
+                return Ok();
+
+            _context.Wishlists.RemoveRange(items);
+
+            await _context.SaveChangesAsync();
+            return Ok();
+        }
+
+        private int GetUserId()
+        {
+            var userIdStr = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (string.IsNullOrWhiteSpace(userIdStr))
+                throw new UnauthorizedAccessException("Missing user id claim.");
+
+            return int.Parse(userIdStr);
         }
     }
 }
