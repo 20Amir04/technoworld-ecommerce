@@ -184,7 +184,7 @@ export default function ProductPage() {
                             type="button"
                             onClick={() => {
                                 if (!user) {
-                                    navigate("/account");
+                                    navigate("/auth");
                                     return;
                                 }
                                 add(product.id);
@@ -198,7 +198,7 @@ export default function ProductPage() {
                             type="button"
                             onClick={() => {
                                 if (!user) {
-                                    navigate("/account");
+                                    navigate("/auth");
                                     return;
                                 }
                                 toggle(product.id)

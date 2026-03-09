@@ -184,3 +184,71 @@ export async function ClearCart(): Promise<void> {
 
     await fetchJson<void>(url, {method: "DELETE"});
 }
+
+export type OrderListItem = {
+    id: number;
+    createdAt: string;
+    status: string;
+    total: number;
+    subtotal: number;
+    delivery: number;
+    tax: number;
+    itemsCount: number;
+};
+
+export type CheckoutPayLoad = {
+    fullName: string;
+    email: string;
+    phone: string;
+    address1: string;
+    address2?: string | null;
+    city: string;
+    province: string;
+    postalCode: string;
+    country: string;
+    cardNumber: string;
+    exp: string;
+    cvc: string;
+};
+
+export async function Checkout(payload: CheckoutPayLoad): Promise<{orderId: number}> {
+    const url = `${API_BASE_URL}/api/Orders/checkout`;
+    return fetchJson<{orderId: number}>(url, {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(payload),
+    });
+}
+
+export async function FetchOrders(): Promise<OrderListItem[]> {
+    const url = `${API_BASE_URL}/api/Orders`;
+    return fetchJson<OrderListItem[]>(url);
+}
+
+export async function FetchOrderById(id: number): Promise<any> {
+    const url = `${API_BASE_URL}/api/Orders/${id}`;
+    return fetchJson<any>(url);
+}
+
+export async function UpdateMe(payload: {name: string; email: string}): Promise<AuthUser> {
+    const url = `${API_BASE_URL}/api/Auth/me`;
+    return fetchJson<AuthUser>(url, {
+        method: "PATCH",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(payload),
+    });
+}
+
+export async function DeleteMe(): Promise<void> {
+    const url = `${API_BASE_URL}/api/Auth/me`;
+    await fetchJson<void>(url, {method: "DELETE"});
+}
+
+export async function ChangePassword(payload: {currentPassword: string; newPassword: string}): Promise<void> {
+    const url = `${API_BASE_URL}/api/Auth/change-password`;
+    await fetchJson<void>(url, {
+        method: "PATCH",
+        headers: {"Content-Type" : "application/json"},
+        body: JSON.stringify(payload),
+    });
+}

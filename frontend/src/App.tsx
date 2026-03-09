@@ -10,6 +10,8 @@ import Wishlist from './pages/Wishlist'
 import AuthPage from './pages/AuthPage'
 import ProductPage from './pages/ProductPage'
 import ProtectedRoute from './auth/ProtectedRoute'
+import Checkout from "./pages/Checkout"
+import OrderSuccess from "./pages/OrderSuccess"
 
 
 function App() {
@@ -25,6 +27,8 @@ function App() {
         <Route path="/wishlist" element={<ProtectedRoute><Wishlist /></ProtectedRoute>} />
         <Route path="/auth" element={<AuthPage />} />
         <Route path="/Product/:id" element={<ProductPage/>} />
+        <Route path="/checkout" element={<ProtectedRoute><Checkout/></ProtectedRoute>} />
+        <Route path="/order-success" element={<ProtectedRoute><OrderSuccess/></ProtectedRoute>} />
       </Routes>
     </main>
     <Footer/>

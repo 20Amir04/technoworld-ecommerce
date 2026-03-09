@@ -1,4 +1,4 @@
-
+import { useNavigate } from "react-router-dom"
 
 
 interface CartSummaryPrors {
@@ -10,6 +10,8 @@ interface CartSummaryPrors {
 
 
 const CartSummary: React.FC<CartSummaryPrors> = ({items}) => {
+
+    const navigate = useNavigate();
 
     const subtotal = items.reduce((sum, item) => sum + item.price * item.qty, 0);
     const delivery = subtotal > 1000 ? 0 : 9.99;
@@ -42,7 +44,12 @@ const CartSummary: React.FC<CartSummaryPrors> = ({items}) => {
                     <span>C$ {total.toFixed(2)}</span>
                 </div>  
                 <div className="mb-6 font-serif">
-                    <button className="py-3 w-full rounded-xl text-white bg-black ">
+                    <button 
+                        type="button"
+                        onClick={() => navigate("/checkout")}
+                        className="py-3 w-full rounded-xl text-white bg-black hover:scale-105 transition-transform duration-300 disabled:opacity-60 disabled:hover:scale-100"
+                        disabled={items.length === 0}
+                        >
                         Checkout
                     </button>
                 </div>
