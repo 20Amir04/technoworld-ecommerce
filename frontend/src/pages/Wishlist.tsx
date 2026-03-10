@@ -4,6 +4,7 @@ import { useWishlist } from "../auth/WishlistContext";
 export default function Wishlist() {
     const {items, loading, error, toggle, clear} = useWishlist();
 
+
     if (loading) return <div className="px-12 py-12 font-serif">Loading wishlist...</div>;
 
     return (
@@ -22,7 +23,7 @@ export default function Wishlist() {
                     </Link>
 
                     <button
-                        className="bg-red-600 text-white px-5 py-2 rounded-xl font-serif disabled:opacity-50"
+                        className="bg-red-600 text-white px-5 py-2 rounded-xl font-serif hover:bg-red-700 cursor-pointer disabled:opacity-50"
                         onClick={clear}
                         disabled={items.length === 0}
                     >

@@ -12,6 +12,7 @@ import ProductPage from './pages/ProductPage'
 import ProtectedRoute from './auth/ProtectedRoute'
 import Checkout from "./pages/Checkout"
 import OrderSuccess from "./pages/OrderSuccess"
+import Search from './pages/Search'
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/category/:category" element={<Category />} />
         <Route path="/category/:category/:subcategory" element={<SubCategory />} />
+        <Route path="/search" element={<Search/>} />
         <Route path="/cart" element={<ProtectedRoute><Cart /></ProtectedRoute>} />
         <Route path="/wishlist" element={<ProtectedRoute><Wishlist /></ProtectedRoute>} />
         <Route path="/auth" element={<AuthPage />} />

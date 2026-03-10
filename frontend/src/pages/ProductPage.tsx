@@ -5,6 +5,7 @@ import { useCart } from "../auth/CartContext";
 import { useWishlist } from "../auth/WishlistContext";
 import { useAuth } from "../auth/AuthContext";
 import { useNavigate } from "react-router-dom";
+import { useToast } from "../components/ToastContext";
 
 
 function formatPrice(price: number) {
@@ -17,6 +18,7 @@ export default function ProductPage() {
     const [error, setError] = useState<string | null>(null);
 
     const navigate = useNavigate();
+    const {showToast} = useToast();
     const {user} = useAuth();
     const {toggle, isInWishlist} = useWishlist();
     const {add} = useCart();
@@ -182,12 +184,20 @@ export default function ProductPage() {
                             <button
                             className="w-full bg-black text-white py-3 rounded-xl font-medium hover:scale-110 transition-transform duration-300"
                             type="button"
-                            onClick={() => {
+                            onClick={async () => {
                                 if (!user) {
                                     navigate("/auth");
                                     return;
                                 }
-                                add(product.id);
+
+                                if (!product) return;
+                                
+                                try {
+                                    await add(product.id, 1);
+                                    showToast("Your cart has been updated", "success");
+                                } catch (e: any) {
+                                    showToast(e?.message ?? "Failed to update your cart", "error")
+                                }
                             }}
                             >
                                 Add to Cart

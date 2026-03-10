@@ -39,7 +39,7 @@ export default function Cart()
                     </Link>
 
                     <button
-                    className="bg-red-600 text-white px-5 py-2 rounded-xl font-serif disabled:opacity-50"
+                    className="bg-red-600 text-white px-5 py-2 rounded-xl font-serif disabled:opacity-50 hover:bg-red-700 cursor-pointer"
                     onClick={clear}
                     disabled={lines.length === 0}
                     >

@@ -4,6 +4,7 @@ import type {Product} from "../api/apiClient";
 import { useWishlist } from "../auth/WishlistContext";
 import {useAuth} from "../auth/AuthContext"
 import { useCart } from "../auth/CartContext";
+import { useToast } from "./ToastContext";
 
 interface ProductCardProps {
   product: Product;
@@ -15,6 +16,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   
   const {add} = useCart();
   const {user} = useAuth();
+  const {showToast} = useToast();
   const {isInWishlist, toggle} = useWishlist();
   const navigate = useNavigate();
   const location = useLocation();
@@ -52,7 +54,12 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       return;
     }
 
-    await add(product.id, 1);
+    try {
+      await add(product.id, 1);
+      showToast("Your cart has been updated", "success");
+    } catch (e: any) {
+      showToast(e?.message ?? "Failed to add to cart", "error");
+    }
   };
 
 
